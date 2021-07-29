@@ -10,14 +10,19 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:guid-utilities.replace"
+		"onCommand:guid-utilities.refresh",
+		"onCommand:guid-utilities.insert"
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "guid-utilities.replace",
+				"command": "guid-utilities.refresh",
 				"title": "Refresh GUIDs"
+			},
+			{
+				"command": "guid-utilities.insert",
+				"title": "Insert GUID"
 			}
 		]
 	},
