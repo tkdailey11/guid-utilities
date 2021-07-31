@@ -1,8 +1,14 @@
 {
 	"name": "guid-utilities",
 	"displayName": "GUID Utilities",
-	"description": "",
+	"publisher": "TylerDailey",
+	"icon": "/images/logo.png",
+	"description": "Adds helpful utilities to refresh all GUIDS in the current document, insert a new GUID at the cursor, or replace the selected text with a new GUID.",
 	"version": "0.0.1",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tkdailey11/guid-utilities.git"
+	},
 	"engines": {
 		"vscode": "^1.58.0"
 	},
@@ -23,6 +29,48 @@
 			{
 				"command": "guid-utilities.insert",
 				"title": "Insert GUID"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+				  "submenu": "guid-utilities",
+				  "group": "navigation"
+				}
+			],
+			"guid-utilities": [
+				{
+					"command": "guid-utilities.insert",
+					"group": "guid-utilities"
+				}
+			]
+		},
+		"submenus": [
+			{
+				"label": "GUID Utilities",
+				"id": "guid-utilities"
+			}
+		],
+		"configuration":[
+			{
+				"title": "GUID Utilities",
+				"properties": {
+					"guidUtilities.includeBrackets": {
+						"type": "boolean",
+						"default": false,
+						"description": "Include {} around the generated GUIDs."
+					},
+					"guidUtilities.useCaps": {
+						"type": "boolean",
+						"default": false,
+						"description": "Capitalize all letters in the generated GUIDs."
+					},
+					"guidUtilities.includeDashes": {
+						"type": "boolean",
+						"default": true,
+						"description": "Include dashes in the generated GUIDs."
+					}
+				}
 			}
 		]
 	},
